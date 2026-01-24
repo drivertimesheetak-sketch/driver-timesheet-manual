@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>勤務管理・実績集計アプリ 操作マニュアル</title>
+ <style>
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+```
+ body {
+ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', sans-serif;
+ line-height: 1.8;
+ color: #333;
+ background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+ padding: 20px;
+ }
+ 
+ .container {
+ max-width: 900px;
+ margin: 0 auto;
+ background: white;
+ border-radius: 20px;
+ box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+ overflow: hidden;
+ }
+ 
+ .header {
+ background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+ color: white;
+ padding: 40px 30px;
+ text-align: center;
+ }
+ 
+ .header h1 {
+ font-size: 28px;
+ margin-bottom: 10px;
+ font-weight: 700;
+ }
+ 
+ .header p {
+ font-size: 15px;
+ opacity: 0.95;
+ }
+ 
+ .content {
+ padding: 40px 30px;
+ }
+ 
+ .intro {
+ background: #f8f9ff;
+ padding: 25px;
+ border-radius: 12px;
+ border-left: 4px solid #667eea;
+ margin-bottom: 40px;
+ }
+ 
+ .intro p {
+ font-size: 15px;
+ color: #555;
+ }
+ 
+ .section {
+ margin-bottom: 50px;
+ }
+ 
+ .section-title {
+ font-size: 24px;
+ color: #667eea;
+ margin-bottom: 20px;
+ padding-bottom: 10px;
+ border-bottom: 3px solid #667eea;
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ }
+ 
+ .section-number {
+ background: #667eea;
+ color: white;
+ width: 35px;
+ height: 35px;
+ border-radius: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 18px;
+ font-weight: bold;
+ }
+ 
+ .subsection {
+ margin: 25px 0;
+ }
+ 
+ .subsection-title {
+ font-size: 18px;
+ color: #444;
+ margin-bottom: 15px;
+ font-weight: 600;
+ padding-left: 15px;
+ border-left: 3px solid #a78bfa;
+ }
+ 
+ .image-container {
+ margin: 20px 0;
+ text-align: center;
+ background: #f8f9fa;
+ padding: 20px;
+ border-radius: 12px;
+ }
+ 
+ .image-container img {
+ max-width: 100%;
+ height: auto;
+ border-radius: 12px;
+ box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+ max-height: 600px;
+ object-fit: contain;
+ }
+ 
+ .image-caption {
+ margin-top: 12px;
+ font-size: 13px;
+ color: #666;
+ font-style: italic;
+ }
+ 
+ .text-content {
+ padding: 0 15px;
+ }
+ 
+ .text-content p {
+ margin-bottom: 12px;
+ font-size: 15px;
+ line-height: 1.8;
+ }
+ 
+ .text-content ul {
+ margin: 15px 0 15px 30px;
+ }
+ 
+ .text-content li {
+ margin-bottom: 10px;
+ font-size: 15px;
+ }
+ 
+ .highlight {
+ background: #fff3cd;
+ padding: 20px;
+ border-radius: 8px;
+ border-left: 4px solid #ffc107;
+ margin: 20px 0;
+ }
+ 
+ .highlight strong {
+ color: #e65100;
+ }
+ 
+ .note {
+ background: #e3f2fd;
+ padding: 15px;
+ border-radius: 8px;
+ border-left: 4px solid #2196f3;
+ margin: 15px 0;
+ font-size: 14px;
+ }
+ 
+ @media (max-width: 768px) {
+ body {
+ padding: 10px;
+ }
+ 
+ .header h1 {
+ font-size: 24px;
+ }
+ 
+ .content {
+ padding: 30px 20px;
+ }
+ 
+ .section-title {
+ font-size: 20px;
+ }
+ }
+</style>
+
+
+</head>
+<body>
+ <div class="container">
+ <div class="header">
+ <h1>勤務管理・実績集計アプリ<br>操作マニュアル</h1>
+ <br>
+ <p>日々の"勤務記録"から"経費管理"まですべてを一元管理</p>
+ </div>
+
+
+ <div class="content">
+ <div class="intro">
+ <p>本アプリは、日々の勤務記録、車両利用状況、および経費(交通費・立替費)を直感的に管理し、分析レポートを作成するためのツールです。</p>
+ </div>
+ 
+ <div class="section">
+ <h2 class="section-title">
+ <span class="section-number">1</span>
+ 初期設定(初回起動時)
+ </h2>
+ 
+ <div class="text-content">
+ <p>アプリを最大限に活用するために、まずは以下の設定を行ってください。</p>
+ </div>
+ 
+ <div class="subsection">
+ <h3 class="subsection-title">初期設定の案内</h3>
+ <div class="text-content">
+ <p>初回起動時には「各休暇の日数を設定してください」という通知が表示されます。画面右上の「設定(歯車アイコン)」から設定画面へ進んでください。</p>
+ </div>
+ 
+ <div class="image-container">
+ <img src="image/01.jpeg" alt="初期設定の案内画面">
+ <div class="image-caption">初回起動時の案内ダイアログ</div>
+ </div>
+ </div>
+ 
+ <div class="subsection">
+ <h3 class="subsection-title">各休暇残日数設定</h3>
+ <div class="text-content">
+ <p>初年度のみ、本日までに取得済みの休暇日数(有休、クリ休、看護、介護など)を入力します。翌年度の4月1日には、設定をリセットする必要があります。</p>
+ </div>
+ 
+ <div class="image-container">
+ <img src="image/26.jpeg" alt="休暇残日数設定画面" onerror="this.style.display='none'">
+ <div class="image-caption">各休暇の取得日数を入力</div>
+ </div>
+ </div>
+ 
+ <div class="subsection">
+ <h3 class="subsection-title">起動パスワードの設定</h3>
+ <div class="text-content">
+ <p>セキュリティを確保するため、4桁の数字によるパスワード設定が可能です。</p>
+ <p>初期パスワード :【0000】</p>
+ </div>
+ 
+ <div class="image-container">
+ <img src="image/23.jpeg" alt="パスワード入力画面" onerror="this.style.display='none'">
+ <div class="image-caption">4桁のパスワードを設定</div>
+ </div>
+ </div>
+ </div>
+ 
+ <div class="section">
+ <h2 class="section-title">
+ <span class="section-number">2</span>
+ 日々の勤務登録
+ </h2>
+ 
+ <div class="text-content">
+ <p>カレンダーから日付を選択、または「詳細一覧」画面から、その日の実績を登録します。</p>
+ </div>
+ 
+ <div class="image-container">
+ <img src="image/03.jpeg" alt="カレンダー画面" onerror="this.style.display='none'">
+ <img src="image/17.jpeg" alt="詳細一覧画面" onerror="this.style.display='none'">
+ <div class="image-caption">月間カレンダーで勤務状況を一覧表示</div>
+ </div>
+ 
+ <div class="subsection">
+ <h3 class="subsection-title">2.1 勤務・休暇区分の選択</h3>
+ <div class="text-content">
+ <p>「日勤」「泊り」「明け」「出張」といった勤務区分、または「有休」「公休」などの休暇区分から該当するものを選択します。</p>
+ </div>
+ 
+ <div class="image-container">
+ <img src="image/06.jpeg" alt="勤務区分選択画面" onerror="this.style.display='none'">
+ <div class="image-caption">勤務・休暇区分の選択</div>
+ </div>
+ </div>
+ 
+ <div class="subsection">
+ <h3 class="subsection-title">2.2 勤務時間の詳細入力</h3>
+ <div class="text-content">
+ <ul>
+ <li><strong>勤務パターン:</strong> 「通常(9時間)」などの基準時間を選択できます。</li>
+ <li><strong>時間入力:</strong> 開始時間と終了時間を分単位(15分刻み / 1分刻みの選択が可能)で入力します。</li>
+ <li><strong>残業時間の自動計算:</strong> 基準時間を超えた場合、「残業発生:9時間1分〜」のように自動で目安が表示されます。</li>
+ </ul>
+ </div>
+ 
+ <div class="image-container">
+ <img src="image/05.jpeg" alt="勤務時間入力画面" onerror="this.style.display='none'">
+ <div class="image-caption">開始・終了時間と残業時間の表示</div>
+ </div>
+ </div>
+ 
+ <div class="subsection">
+ <h3 class="subsection-title">2.3 車両および出退勤ステータス</h3>
+ <div class="text-content">
+ <ul>
+ <li><strong>車両選択:</strong> 利用した車両(AK-32、AK-13等)をリストから選択します。</li>
+ <li><strong>出退勤状況:</strong> 「現出」「現退」「臨泊」といった詳細なステータスを記録できます。</li>
+ </ul>
+ </div>
+ 
+ <div class="image-container">
+ <img src="image/09.jpeg" alt="車両選択/出退勤状況画面" onerror="this.style.display='none'">
+ <img src="image/07.jpeg" alt="車両選択画面" onerror="this.style.display='none'">
+ <img src="image/10.jpeg" alt="出退勤状況" onerror="this.style.display='none'">
+ <div class="image-caption">車両リストから選択 / 出退勤状況</div>
+ </div>
+ </div>
+ </div>
+ 
+ <div class="section">
+ <h2 class="section-title">
+ <span class="section-number">3</span>
+ 経費管理(交通費・立替費)
+ </h2>
+ 
+ <div class="text-content">
+ <p>勤務登録画面の下部から、その日に発生した経費を入力できます。</p>
+ 
+ <ul>
+ <li><strong>交通費:</strong> 利用した交通機関の区間(例:大宮〜原宿)と金額を入力します。</li>
+ <li><strong>立替費:</strong> 駐車場代、軽油代、宿代などの項目と金額を入力します。</li>
+ <li><strong>備考欄:</strong> 業務内容や具体的なメモ(例:羽田報道室、Bリーグ○○体育館留置)を残すことができます。</li>
+ </ul>
+ </div>
+ 
+ <div class="image-container">
+ <img src="image/12.jpeg" alt="経費入力画面" onerror="this.style.display='none'">
+ <img src="image/11.jpeg" alt="備考欄入力画面" onerror="this.style.display='none'">
+ <div class="image-caption">交通費と立替費の入力</div>
+ </div>
+ </div>
+ 
+ <div class="section">
+ <h2 class="section-title">
+ <span class="section-number">4</span>
+ 実績集計とレポート確認
+ </h2>
+ 
+ <div class="text-content">
+ <p>「集計」タブでは、月間および年間の実績が自動でリストとしてまとめられます。</p>
+ </div>
+
+ <div class="subsection">
+ <h3 class="subsection-title">通常勤務・休日出勤</h3>
+ <div class="text-content">
+ <p>稼働時間、残業時間、休日出勤日数および時間が集計されます。</p>
+ </div>
+ </div>
+ 
+ <div class="image-container">
+ <img src="image/16.jpeg" alt="実績集計レポート画面" onerror="this.style.display='none'">
+ <div class="image-caption">通常勤務・休日出勤 状況</div>
+ </div>
+ 
+ <div class="subsection">
+ <h3 class="subsection-title">休暇残数管理</h3>
+ <div class="text-content">
+ <p>有休、クリ、代休、積立休暇、看護・介護休暇の残り日数が一目で確認できます。</p>
+ </div>
+ 
+ <div class="image-container">
+ <img src="image/21.jpeg" alt="休暇残数画面" onerror="this.style.display='none'">
+ <div class="image-caption">各休暇の残日数表示</div>
+ </div>
+ </div>
+ 
+ <div class="subsection">
+ <h3 class="subsection-title">内訳レポート</h3>
+ <div class="text-content">
+ <ul>
+ <li><strong>勤務・休暇区分内訳:</strong> 各項目の取得数をリスト表示します。</li>
+ </ul>
+ </div>
+ 
+ <div class="image-container">
+ <img src="image/19.jpeg" alt="勤務区分内訳画面" onerror="this.style.display='none'">
+ <div class="image-caption">勤務・休暇区分の内訳</div>
+ </div>
+ 
+ <div class="text-content">
+ <ul>
+ <li><strong>車両利用状況:</strong> 車両ごとの利用回数を確認できます。</li>
+ </ul>
+ </div>
+ <div class="image-container">
+ <img src="image/22.jpeg" alt="車両利用状況画面" onerror="this.style.display='none'">
+ <div class="image-caption">車両ごとの利用回数</div>
+ </div>
+ 
+ <div class="text-content">
+ <ul>
+ <li><strong>経費集計:</strong> 交通費と立替費の合計金額を算出します。</li>
+ </ul>
+ </div>
+ <div class="image-container">
+ <img src="image/20.jpeg" alt="経費集計画面" onerror="this.style.display='none'">
+ <div class="image-caption">交通費・立替費の集計</div>
+ </div>
+ </div>
+ </div>
+ 
+ <div class="section">
+ <h2 class="section-title">
+ <span class="section-number">5</span>
+ アプリ設定とデータ管理
+ </h2>
+ 
+ <div class="text-content">
+ <p>画面右上の設定アイコンから、各種メンテナンスが行えます。</p>
+ </div>
+ 
+ <div class="subsection">
+ <h3 class="subsection-title">手動設定項目</h3>
+ <div class="text-content">
+ <p>代休や積立休暇の残日数にズレが生じた場合、こちらから調整が可能です。</p>
+ </div>
+ 
+ <div class="image-container">
+ <img src="image/24.jpeg" alt="手動設定画面" onerror="this.style.display='none'">
+ <div class="image-caption">休暇残日数の手動調整</div>
+ </div>
+ </div>
+ 
+ <div class="subsection">
+ <h3 class="subsection-title">データのバックアップ</h3>
+ <div class="text-content">
+ <p>データの移行や保存のために、CSV形式でのダウンロードおよび復元機能が備わっています。</p>
+ </div>
+ 
+ <div class="image-container">
+ <img src="image/27.jpeg" alt="データバックアップ画面" onerror="this.style.display='none'">
+ <div class="image-caption">CSVダウンロード・復元機能</div>
+ </div>
+ </div>
+ 
+ <div class="subsection">
+ <h3 class="subsection-title">デザインカスタマイズ</h3>
+ <div class="text-content">
+ <p>アプリの背景色を好みに合わせて変更できます。</p>
+ </div>
+ </div>
+ 
+ <div class="subsection">
+ <h3 class="subsection-title">データ初期化</h3>
+ <div class="text-content">
+ <p>すべての登録データと設定を削除し、初期状態に戻す機能です(実行には注意が必要です)。</p>
+ </div>
+ <div class="image-container">
+ <img src="image/23.jpeg" alt="デザインカスタマイズ/データ初期化" onerror="this.style.display='none'">
+ <div class="image-caption">デザインカスタマイズ / データ初期化</div>
+ </div>
+ </div>
+ 
+ <div class="note">
+ <strong>ご注意:</strong> 翌年度の4月1日以降の休暇残数は自動的に表示されますが、手動での調整値リセット操作が必要な場合があります。詳細は設定画面の注釈をご確認ください。
+ </div>
+ </div>
+ </div>
+</div>
+
+</body>
+</html>
